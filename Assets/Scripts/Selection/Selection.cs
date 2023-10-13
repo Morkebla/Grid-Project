@@ -5,35 +5,18 @@ using UnityEngine.EventSystems;
 
 public class Selection : MonoBehaviour
 {
-    RaycastHit hit;
-    private float offSet = 0.5f;
+   RaycastHit hit;
 
     Transform highlight;
     [SerializeField] Material selectedMat;
     [SerializeField] Material highlightMaterial;
     [SerializeField] private Material _originalMat;
     [SerializeField] GameObject knight;
-    Tile tile = null;
-
-    private void Start()
-    {
-        tile = FindObjectOfType<Tile>();
-    }
 
     private void Update()
     {
         MouseOverHighlight();
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (Physics.Raycast(ray, out hit) && tile.taken != true)
-            {
-                Vector3 characterPos = hit.transform.position + (hit.transform.up * offSet);
-                Instantiate(knight, characterPos, Quaternion.identity);
-                tile.taken = true;
-            }
-        }
-        
+
     }
 
     private void MouseOverHighlight()
@@ -58,4 +41,5 @@ public class Selection : MonoBehaviour
             }
         }
     }
+   
 }
