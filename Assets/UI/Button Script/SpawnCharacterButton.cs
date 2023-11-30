@@ -27,7 +27,9 @@ public class SpawnCharacterButton : MonoBehaviour
    private void UpdateCharacterSpawning()
     {
         GameObject characterPrefab = Characters.GetCharacterPrefab(characterName);
+
         if (characterPrefab == null) { return; }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Input.GetMouseButton(0))
         {

@@ -11,7 +11,6 @@ public class Selection : MonoBehaviour
     [SerializeField] Material selectedMat;
     [SerializeField] Material highlightMaterial;
     [SerializeField] private Material _originalMat;
-    [SerializeField] GameObject knight;
 
     private void Update()
     {

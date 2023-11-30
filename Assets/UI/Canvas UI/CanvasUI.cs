@@ -5,7 +5,6 @@ using UnityEngine;
 public class CanvasUI : MonoBehaviour
 {
     Canvas canvas;
-    bool canvasSwitch = true;
     void Start()
     {
         canvas = FindObjectOfType<Canvas>();
